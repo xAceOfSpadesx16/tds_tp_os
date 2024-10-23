@@ -1,4 +1,4 @@
-echo "creando grupo familia"
+echo "Creando grupo familia"
 sudo groupadd GRP-FAMILIA
 
 echo
@@ -6,7 +6,9 @@ echo
 echo "----------------------------------"
 
 echo "Creando usuarios para el grupo 'familia'"
+# useradd opciones: -M no crea directorio home, -U crea un grupo con el mismo nombre del usuario, -s define shell de usuario
 echo "Comando de creacion de usuario: sudo useradd -M -U -s /bin/bash <username>"
+#
 echo "Comando de establecer contraseña: sudo echo <username>:<password> | sudo chpasswd"
 
 echo
@@ -44,6 +46,7 @@ echo "----------------------------------"
 echo
 
 echo "Agregando usuarios al grupo 'familia'"
+#
 echo "Comando: sudo usermod -aG GRP-FAMILIA <usuario>"
 sudo usermod -aG GRP-FAMILIA $USUARIO_1
 sudo usermod -aG GRP-FAMILIA $USUARIO_2
@@ -59,11 +62,13 @@ echo
 
 echo "Creando directorio familia en la particion sdb1"
 echo "Comando: sudo mkdir /srv/smb/familia"
-sudo mkdir /srv/smb/familia
+#
+sudo mkdir -p /srv/smb/familia
 
 echo
 
 echo "definindo permisos para el directorio 'familia'"
+#
 echo "Comando: sudo chmod 2770 /srv/smb/familia"
 sudo chmod 2770 /srv/smb/familia
 
@@ -71,6 +76,7 @@ echo
 
 echo "Definiendo propietario y grupo del directorio 'familia'"
 echo "Comando: sudo chown root:GRP-FAMILIA /srv/smb/familia"
+#
 sudo chown root:GRP-FAMILIA /srv/smb/familia
 
 echo

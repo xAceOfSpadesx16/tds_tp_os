@@ -1,6 +1,7 @@
 echo "Bienvenidos al trabajo de Sistemas Operativos y Redes de Datos"
 
 sudo bash pasos.sh
+
 echo
 read -n 1 -s -r -p "Presiona cualquier tecla para comenzar a particionar..."
 echo

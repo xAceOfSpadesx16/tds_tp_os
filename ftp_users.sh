@@ -25,3 +25,5 @@ echo "Usuario $USUARIO_2 creado con exito"
 echo
 
 echo "Configurando el servidor FTP"
+
+echo
