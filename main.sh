@@ -3,6 +3,10 @@ echo "Bienvenidos al trabajo de Sistemas Operativos y Redes de Datos"
 sudo bash pasos.sh
 
 echo
+
+sudo bash required.sh
+
+echo
 read -n 1 -s -r -p "Presiona cualquier tecla para comenzar a particionar..."
 echo
 
@@ -21,9 +25,14 @@ echo
 sudo bash samba.sh
 
 echo
-read -n 1 -s -r -p "Presiona cualquier tecla para comenzar la configuracion de FTP..."
+read -n 1 -s -r -p "Presiona cualquier tecla para comenzar la creacion de usuarios para el servidor FTP..."
 echo
 
+sudo bash ftp_users.sh
+
+echo
+read -n 1 -s -r -p "Presiona cualquier tecla para comenzar la configuracion de FTP..."
+echo
 sudo bash ftp.sh
 
 echo

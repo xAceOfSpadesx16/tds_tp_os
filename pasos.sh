@@ -12,3 +12,8 @@ echo "10. Reiniciar el servicio Samba para que se apliquen los cambios."
 echo "11. Crear 2 usuarios con sus respectivos homes en la partición sdb2."
 echo "12. Levantar el servidor FTP."
 echo "13. Poner a prueba ambos servidores."
+
+echo "Requisitos"
+
+echo "Disco: /dev/sdb"
+echo "Paquetes: samba, vsftpd, git, tree"

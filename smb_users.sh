@@ -14,7 +14,7 @@ echo "Comando de establecer contraseña: sudo echo <username>:<password> | sudo
 echo
 
 read -p "Ingresa el nombre del primer usuario: " USUARIO_1
-read -p "Ingrese la contraseña: " CONTRASENA_1
+read -s -p "Ingrese la contraseña: " CONTRASENA_1
 echo "Creando usuario $USUARIO_1"
 sudo useradd -M -U -s /bin/bash $USUARIO_1
 echo "Estableciendo la contraseña para el usuario $USUARIO_1"
@@ -24,7 +24,7 @@ echo "Usuario $USUARIO_1 creado con exito"
 echo
 
 read -p "Ingresa el nombre del segundo usuario: " USUARIO_2
-read -p "Ingrese la contraseña: " CONTRASENA_2
+read -s -p "Ingrese la contraseña: " CONTRASENA_2
 echo "Creando usuario $USUARIO_2"
 sudo useradd -M -U -s /bin/bash $USUARIO_2
 echo "Estableciendo la contraseña para el usuario $USUARIO_2"
@@ -32,7 +32,7 @@ sudo echo $USUARIO_2:$CONTRASENA_2 | sudo chpasswd
 echo "Usuario $USUARIO_2 creado con exito"
 
 read -p "Ingresa el nombre del tercer usuario: " USUARIO_3
-read -p "Ingrese la contraseña: " CONTRASENA_3
+read -s -p "Ingrese la contraseña: " CONTRASENA_3
 echo "Creando usuario $USUARIO_3"
 sudo useradd -M -U -s /bin/bash $USUARIO_3
 echo "Estableciendo la contraseña para el usuario $USUARIO_3"

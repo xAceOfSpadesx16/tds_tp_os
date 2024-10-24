@@ -5,7 +5,7 @@ echo "Comando de establecer contraseña: sudo echo <username>:<password> | sudo
 echo
 
 read -p "Ingresa el nombre del primer usuario: " USUARIO_1
-read -p "Ingrese la contraseña: " CONTRASENA_1
+read -s -p "Ingrese la contraseña: " CONTRASENA_1
 echo "Creando usuario $USUARIO_1"
 sudo useradd -d /srv/ftp/$USUARIO_1 -m -U -s /bin/bash -k /etc/skel $USUARIO_1
 echo "Estableciendo la contraseña para el usuario $USUARIO_1"
@@ -15,7 +15,7 @@ echo "Usuario $USUARIO_1 creado con exito"
 echo
 
 read -p "Ingresa el nombre del segundo usuario: " USUARIO_2
-read -p "Ingrese la contraseña: " CONTRASENA_2
+read -s -p "Ingrese la contraseña: " CONTRASENA_2
 echo "Creando usuario $USUARIO_2"
 sudo useradd -d /srv/ftp/$USUARIO_2 -m -U -s /bin/bash -k /etc/skel $USUARIO_2
 echo "Estableciendo la contraseña para el usuario $USUARIO_2"
@@ -24,6 +24,10 @@ echo "Usuario $USUARIO_2 creado con exito"
 
 echo
 
-echo "Configurando el servidor FTP"
+echo "Agregando usuarios a ftp users list"
+echo -e "usuario1\nusuario2" | sudo tee /etc/vsftpd.userlist
 
 echo
+
+echo "Agregando usuarios a ftp chroot list para delimitarlos estrictamente a su home"
+echo -e "usuario1\nusuario2" | sudo tee /etc/vsftpd.chroot_list
