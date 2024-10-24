@@ -30,7 +30,9 @@ echo "Formateando particion sdb2 con sistema de archivos ext4"
 echo "Comando: sudo mkfs.ext4 /dev/sdb2"
 sudo mkfs.ext4 /dev/sdb2
 
-echo && sleep 1
+echo
+read -n 1 -s -r -p "..."
+clear
 
 echo "----------------------------------"
 
@@ -44,8 +46,10 @@ sudo parted -s /dev/sdb
 echo
 
 echo "----------------------------------"
-
-echo && sleep 1
+echo
+read -n 1 -s -r -p "..."
+echo
+clear
 
 echo "Creando directorios para montar las particiones"
 sudo mkdir -p /srv/smb
@@ -69,6 +73,11 @@ echo "Comando: sudo mount -a"
 sudo mount -a
 
 echo && sleep 1
+
+echo
+read -n 1 -s -r -p "..."
+echo
+clear
 
 echo "----------------------------------"
 

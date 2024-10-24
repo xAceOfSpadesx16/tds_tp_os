@@ -1,4 +1,6 @@
 echo "Creando grupo familia"
+
+echo "Comando: sudo groupadd GRP-FAMILIA"
 sudo groupadd GRP-FAMILIA
 
 echo
@@ -15,6 +17,7 @@ echo
 
 read -p "Ingresa el nombre del primer usuario: " USUARIO_1
 read -s -p "Ingrese la contraseña: " CONTRASENA_1
+echo
 echo "Creando usuario $USUARIO_1"
 sudo useradd -M -U -s /bin/bash $USUARIO_1
 echo "Estableciendo la contraseña para el usuario $USUARIO_1"
@@ -25,14 +28,18 @@ echo
 
 read -p "Ingresa el nombre del segundo usuario: " USUARIO_2
 read -s -p "Ingrese la contraseña: " CONTRASENA_2
+echo
 echo "Creando usuario $USUARIO_2"
 sudo useradd -M -U -s /bin/bash $USUARIO_2
 echo "Estableciendo la contraseña para el usuario $USUARIO_2"
 sudo echo $USUARIO_2:$CONTRASENA_2 | sudo chpasswd
 echo "Usuario $USUARIO_2 creado con exito"
 
+echo
+
 read -p "Ingresa el nombre del tercer usuario: " USUARIO_3
 read -s -p "Ingrese la contraseña: " CONTRASENA_3
+echo
 echo "Creando usuario $USUARIO_3"
 sudo useradd -M -U -s /bin/bash $USUARIO_3
 echo "Estableciendo la contraseña para el usuario $USUARIO_3"
@@ -44,6 +51,9 @@ echo
 echo "----------------------------------"
 
 echo
+read -n 1 -s -r -p "..."
+echo
+clear
 
 echo "Agregando usuarios al grupo 'familia'"
 #
@@ -55,6 +65,9 @@ echo "Grupos 'familia' agregados a los usuarios $USUARIO_1, $USUARIO_2 y $USUARI
 sudo cat /etc/group | grep GRP-FAMILIA
 
 echo
+read -n 1 -s -r -p "..."
+echo
+clear
 
 echo "----------------------------------"
 
@@ -82,3 +95,7 @@ sudo chown root:GRP-FAMILIA /srv/smb/familia
 echo
 
 echo "----------------------------------"
+echo
+read -n 1 -s -r -p "..."
+echo
+clear
