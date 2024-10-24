@@ -27,3 +27,8 @@ echo && sleep 2
 echo "Listando recursos compartidos en Localhost mediante SMB"
 echo "Comando: smbclient -L //localhost/"
 smbclient -L //localhost/
+
+echo
+read -n 1 -s -r -p "..."
+echo
+clear
