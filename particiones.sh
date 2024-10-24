@@ -22,13 +22,13 @@ echo && sleep 1
 echo "Formateando particion sdb1 con sistema de archivos ext4 dedicado para Samba"
 #
 echo "Comando: sudo mkfs.ext4 /dev/sdb1"
-sudo mkfs.ext4 /dev/sdb1
+sudo mkfs.ext4 /dev/sdb1 >/dev/null
 
 echo && sleep 1
 
 echo "Formateando particion sdb2 con sistema de archivos ext4"
 echo "Comando: sudo mkfs.ext4 /dev/sdb2"
-sudo mkfs.ext4 /dev/sdb2
+sudo mkfs.ext4 /dev/sdb2 >/dev/null
 
 echo
 read -n 1 -s -r -p "..."
@@ -40,8 +40,8 @@ echo
 
 echo "Listando particiones del disco /dev/sdb"
 #
-echo "Comando: sudo parted -s /dev/sdb"
-sudo parted -s /dev/sdb
+echo "Comando: sudo parted -s /dev/sdb print"
+sudo parted -s /dev/sdb print
 
 echo
 
