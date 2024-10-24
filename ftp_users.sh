@@ -25,9 +25,11 @@ echo "Usuario $USUARIO_2 creado con exito"
 echo
 
 echo "Agregando usuarios a ftp users list"
-echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.userlist
+echo "Comando: echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.userlist > /dev/null"
+echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.userlist >/dev/null
 
 echo
 
 echo "Agregando usuarios a ftp chroot list para delimitarlos estrictamente a su home"
-echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.chroot_list
+echo "Comando: echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.chroot_list > /dev/null"
+echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.chroot_list >/dev/null

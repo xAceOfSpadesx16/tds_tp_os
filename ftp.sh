@@ -6,7 +6,10 @@ sleep 1
 echo "Variables añadidas:"
 sudo tee -a /etc/vsftpd.conf <<EOF
 anonymous_enable=NO
+write_enable=YES
 local_enable=YES
+local_umask=027
+force_dot_files=NO
 chroot_local_user=YES
 allow_writeable_chroot=YES
 userlist_enable=YES
@@ -14,6 +17,7 @@ userlist_deny=NO
 userlist_file=/etc/vsftpd.userlist
 chroot_list_enable=YES
 chroot_list_file=/etc/vsftpd.chroot_list
+
 EOF
 
 echo && sleep 1
