@@ -67,6 +67,12 @@ echo "/dev/sdb2  /srv/ftp  ext4  defaults  0  2" | sudo tee -a /etc/fstab >/dev/
 
 echo && sleep 1
 
+echo "Reiniciando daemon de montaje"
+echo "Comando: sudo systemctl daemon-reload"
+sudo systemctl daemon-reload
+
+echo && sleep 1
+
 echo "Montando particiones en el sistema de archivos"
 #
 echo "Comando: sudo mount -a"
