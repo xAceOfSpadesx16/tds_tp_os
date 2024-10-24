@@ -11,7 +11,7 @@ if [[ "$respuesta" == "n" ]]; then
     echo "Actualizando lista de paquetes..."
     sudo apt update &>/dev/null
     echo "Instalando paquetes..."
-    sudo apt install -y samba vsftpd git tree &>/dev/null
+    sudo apt install -y samba vsftpd git tree smbclient &>/dev/null
 fi
 
 echo "Listo para comenzar."

@@ -7,6 +7,7 @@ echo
 sudo bash required.sh
 
 echo
+
 read -n 1 -s -r -p "Presiona cualquier tecla para comenzar a particionar..."
 echo
 clear
