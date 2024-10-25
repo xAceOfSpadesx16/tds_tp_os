@@ -4,11 +4,11 @@ echo "modificando el archivo /etc/samba/smb.conf" && sleep 1
 
 echo "[Familia]" | sudo tee -a /etc/samba/smb.conf
 echo "   path = /srv/smb/familia" | sudo tee -a /etc/samba/smb.conf
-echo "   valid users = @GRP_FAMILIA" | sudo tee -a /etc/samba/smb.conf
+echo "   valid users = @GRP-FAMILIA" | sudo tee -a /etc/samba/smb.conf
 echo "   read only = no" | sudo tee -a /etc/samba/smb.conf
 echo "   browsable = yes" | sudo tee -a /etc/samba/smb.conf
-echo "   create mask = 0770" | sudo tee -a /etc/samba/smb.conf
-echo "   directory mask = 0770" | sudo tee -a /etc/samba/smb.conf
+echo "   create mask = 2770" | sudo tee -a /etc/samba/smb.conf
+echo "   directory mask = 2770" | sudo tee -a /etc/samba/smb.conf
 
 echo && sleep 1
 
