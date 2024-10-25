@@ -96,14 +96,14 @@ echo "Comando: sudo mkdir /srv/smb/familia"
 #
 sudo mkdir -p /srv/smb/familia
 
-echo
+echo && sleep 1
 
 echo "definindo permisos para el directorio 'familia'"
 #
 echo "Comando: sudo chmod 2770 /srv/smb/familia"
 sudo chmod 2770 /srv/smb/familia
 
-echo
+echo && sleep 1
 
 echo "Definiendo propietario y grupo del directorio 'familia'"
 echo "Comando: sudo chown root:GRP-FAMILIA /srv/smb/familia"
