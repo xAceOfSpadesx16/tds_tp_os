@@ -12,6 +12,13 @@ echo "   directory mask = 2770" | sudo tee -a /etc/samba/smb.conf
 
 echo && sleep 1
 
+echo "Creando usuario usuario_demo"
+echo "Comando: (echo "123"; echo "123") | sudo smbpasswd -a usuario_demo"
+(
+    echo "123"
+    echo "123"
+) | sudo smbpasswd -a usuario_demo
+
 echo "Reiniciando el servicio Samba"
 echo "Comando: sudo systemctl restart smb"
 sudo systemctl restart smb
@@ -25,8 +32,8 @@ systemctl status smb | sed -n '1,3p'
 echo && sleep 2
 
 echo "Listando recursos compartidos en Localhost mediante SMB"
-echo "Comando: smbclient -L //localhost/"
-smbclient -L //localhost/ -N
+echo "Comando: smbclient -L //localhost/ -U usuario_demo%123"
+smbclient -L //localhost/ -U usuario_demo%123
 
 echo
 read -n 1 -s -r -p "..."
