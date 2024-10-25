@@ -13,10 +13,10 @@ echo "   directory mask = 2770" | sudo tee -a /etc/samba/smb.conf
 echo && sleep 1
 
 echo "Creando usuario usuario_demo"
-echo "Comando: (echo "123"; echo "123") | sudo smbpasswd -a usuario_demo"
+echo "Comando: (echo 123; echo 123) | sudo smbpasswd -a usuario_demo"
 (
-    echo "123"
-    echo "123"
+    echo 123
+    echo 123
 ) | sudo smbpasswd -a usuario_demo
 
 echo "Reiniciando el servicio Samba"

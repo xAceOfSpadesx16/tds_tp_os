@@ -55,13 +55,14 @@ read -n 1 -s -r -p "..."
 echo
 clear
 
-echo "Agregando usuarios al grupo 'familia'"
+echo "Agregando usuarios al grupo 'GRP-FAMILIA'"
 #
 echo "Comando: sudo usermod -aG GRP-FAMILIA <usuario>"
 sudo usermod -aG GRP-FAMILIA $USUARIO_1
 sudo usermod -aG GRP-FAMILIA $USUARIO_2
 sudo usermod -aG GRP-FAMILIA $USUARIO_3
-echo "Grupos 'familia' agregados a los usuarios $USUARIO_1, $USUARIO_2 y $USUARIO_3"
+echo
+echo " Usuarios $USUARIO_1, $USUARIO_2 y $USUARIO_3 agregados al grupo GRP-FAMILIA"
 sudo cat /etc/group | grep GRP-FAMILIA
 
 echo
