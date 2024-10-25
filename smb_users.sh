@@ -12,6 +12,8 @@ echo "Creando usuarios para el grupo 'familia'"
 echo "Comando de creacion de usuario: sudo useradd -M -U -s /bin/bash <username>"
 #
 echo "Comando de establecer contraseña: sudo echo <username>:<password> | sudo chpasswd"
+echo "Comando para agregar usuario a la base de datos de samba:"
+echo "(echo <password>; echo <password>) | sudo smbpasswd -a <username>"
 
 echo
 
@@ -24,6 +26,11 @@ echo "Estableciendo la contraseña para el usuario $USUARIO_1"
 sudo echo $USUARIO_1:$CONTRASENA_1 | sudo chpasswd
 echo "Usuario $USUARIO_1 creado con exito"
 
+(
+    echo $CONTRASENA_1
+    echo $CONTRASENA_1
+) | sudo smbpasswd -a $USUARIO_1
+
 echo
 
 read -p "Ingresa el nombre del segundo usuario: " USUARIO_2
@@ -35,6 +42,11 @@ echo "Estableciendo la contraseña para el usuario $USUARIO_2"
 sudo echo $USUARIO_2:$CONTRASENA_2 | sudo chpasswd
 echo "Usuario $USUARIO_2 creado con exito"
 
+(
+    echo $CONTRASENA_2
+    echo $CONTRASENA_2
+) | sudo smbpasswd -a $USUARIO_2
+
 echo
 
 read -p "Ingresa el nombre del tercer usuario: " USUARIO_3
@@ -45,6 +57,11 @@ sudo useradd -M -U -s /bin/bash $USUARIO_3
 echo "Estableciendo la contraseña para el usuario $USUARIO_3"
 sudo echo $USUARIO_3:$CONTRASENA_3 | sudo chpasswd
 echo "Usuario $USUARIO_3 creado con exito"
+
+(
+    echo $CONTRASENA_3
+    echo $CONTRASENA_3
+) | sudo smbpasswd -a $USUARIO_3
 
 echo
 
