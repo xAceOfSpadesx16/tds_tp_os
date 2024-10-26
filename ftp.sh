@@ -4,6 +4,8 @@ echo "Modificando el archivo /etc/vsftpd.conf"
 echo "Comando: sudo tee -a /etc/vsftpd.conf << EOF ... EOF"
 sleep 1
 echo "Variables añadidas:"
+#
+#
 sudo tee -a /etc/vsftpd.conf <<EOF
 anonymous_enable=NO
 write_enable=YES
@@ -23,9 +25,16 @@ EOF
 echo && sleep 1
 
 echo "Reiniciando el servicio vsftpd"
+#
 sudo systemctl restart vsftpd
 
 echo && sleep 2
 
 echo "Comprobando el estado del servicio vsftpd"
+#
 sudo systemctl status vsftpd --no-pager
+
+echo
+
+read -n 1 -s -r -p "..."
+clear

@@ -57,6 +57,7 @@ sudo mkdir -p /srv/ftp
 
 echo "Modificando archivo /etc/fstab"
 #
+#
 echo "Comando: echo '/dev/sdb<num_particion> /srv/smb ext4 defaults 0 2' | sudo tee -a /etc/fstab > /dev/null"
 
 echo "Incluyendo particion sdb1 al archivo"
@@ -68,6 +69,7 @@ echo "/dev/sdb2  /srv/ftp  ext4  defaults  0  2" | sudo tee -a /etc/fstab >/dev/
 echo && sleep 1
 
 echo "Reiniciando daemon de montaje"
+#
 echo "Comando: sudo systemctl daemon-reload"
 sudo systemctl daemon-reload
 
@@ -97,3 +99,7 @@ sudo lsblk
 echo
 
 echo "----------------------------------"
+
+echo
+read -n 1 -s -r -p "..."
+clear

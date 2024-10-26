@@ -1,5 +1,9 @@
 echo "Creando usuarios para el servidor FTP"
+#
+#
 echo "Comando de creacion de usuario: sudo useradd -d /srv/ftp/<username> -m -U -s /sbin/bash -k /etc/skel <username>"
+#
+#
 echo "Comando de establecer contraseña: sudo echo <username>:<password> | sudo chpasswd"
 
 echo
@@ -25,11 +29,19 @@ echo "Usuario $USUARIO_2 creado con exito"
 echo
 
 echo "Agregando usuarios a ftp users list"
-echo "Comando: echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.userlist > /dev/null"
+echo -E "Comando: echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.userlist > /dev/null"
+#
+#
 echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.userlist >/dev/null
 
 echo
 
 echo "Agregando 2° usuarios a ftp chroot_list lo que quita la limitacion de home"
 echo "Comando: echo -e "$USUARIO_2" | sudo tee /etc/vsftpd.chroot_list > /dev/null"
+#
+#
 echo -e "$USUARIO_2" | sudo tee /etc/vsftpd.chroot_list >/dev/null
+
+echo
+read -n 1 -s -r -p "..."
+clear

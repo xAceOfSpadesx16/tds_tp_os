@@ -4,6 +4,9 @@ echo "modificando el archivo /etc/samba/smb.conf" && sleep 1
 
 echo
 echo "Definiendo la sección [global] -> map to guest = never"
+#
+#
+#
 if grep -q "^\[global\]" /etc/samba/smb.conf; then
     sudo sed -i '/^\[global\]/,/^\[.*\]/ s/^ *map to guest *=.*/map to guest = never/' /etc/samba/smb.conf
 else
@@ -13,6 +16,8 @@ fi
 echo && sleep 1
 
 echo "Definiendo recurso compartido 'Familia'"
+#
+#
 echo "Comandos: echo '<line>' | sudo tee -a /etc/samba/smb.conf"
 
 echo "[Familia]" | sudo tee -a /etc/samba/smb.conf
@@ -28,15 +33,16 @@ echo && sleep 1
 
 echo "Reiniciando el servicio Samba"
 echo "Comando: sudo systemctl restart smbd"
+#
 sudo systemctl restart smbd
 
 echo && sleep 2
 
 echo "Comprobando el estado del servicio Samba"
 echo "Comando: systemctl status smbd | sed -n '1,3p'"
+#
 systemctl status smbd --no-pager
 
 echo
 read -n 1 -s -r -p "..."
-echo
 clear

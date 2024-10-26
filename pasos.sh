@@ -1,4 +1,4 @@
-echo "Trabajo Práctico Resumen:"
+echo "Trabajo Práctico - Sistemas Operativos y Redes de Datos:"
 echo "1. Formatear el disco /dev/sdb y crear tabla de particiones GPT."
 echo "2. Crear particiones sdb1 y sdb2 como primarias de 50% de capacidad cada una."
 echo "3. Formatear las particiones con sistema de archivos ext4."
@@ -17,3 +17,8 @@ echo "Requisitos"
 
 echo "Disco: /dev/sdb"
 echo "Paquetes: samba, vsftpd, git, tree"
+
+echo
+
+read -n 1 -s -r -p "..."
+clear

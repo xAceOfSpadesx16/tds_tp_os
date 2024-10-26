@@ -115,5 +115,4 @@ echo
 echo "----------------------------------"
 echo
 read -n 1 -s -r -p "..."
-echo
 clear
