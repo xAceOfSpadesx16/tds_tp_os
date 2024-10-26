@@ -6,7 +6,7 @@
 ## <u>Requisitos </u>:
 
 - ### Disco:
-    - **smb limpio**
+    - **sdb limpio**
 
 - ### Paquetes:
     - **git**
