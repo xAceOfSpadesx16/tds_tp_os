@@ -30,6 +30,7 @@ echo
 
 echo "Confirmando puntos de montaje"
 echo "Comando: df /srv/*"
+#
 df /srv/*
 
 echo
