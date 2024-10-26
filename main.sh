@@ -1,7 +1,8 @@
+echo
 echo "Bienvenidos al trabajo de Sistemas Operativos y Redes de Datos"
 echo
 #
-read -n 1 -s -r -p "..."
+read -n 1 -s -r -p "Comenzar la presentación..."
 clear
 
 sudo bash pasos.sh
@@ -40,4 +41,6 @@ sudo bash enabled_users.sh
 echo
 read -n 1 -s -r -p "Presiona cualquier tecla para finalizar..."
 clear
+echo
 echo "Gracias por su atencion, ahora a testear!"
+echo

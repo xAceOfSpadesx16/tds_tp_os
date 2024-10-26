@@ -39,7 +39,7 @@ sudo systemctl restart smbd
 echo && sleep 2
 
 echo "Comprobando el estado del servicio Samba"
-echo "Comando: systemctl status smbd | sed -n '1,3p'"
+echo "Comando: sudo systemctl status smbd --no-pager"
 #
 systemctl status smbd --no-pager
 
