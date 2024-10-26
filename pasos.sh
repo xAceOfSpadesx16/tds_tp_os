@@ -16,4 +16,4 @@ echo "13. Poner a prueba ambos servidores."
 echo "Requisitos"
 
 echo "Disco: /dev/sdb"
-echo "Paquetes: samba, vsftpd, git, tree, smbclient"
+echo "Paquetes: samba, vsftpd, git, tree"

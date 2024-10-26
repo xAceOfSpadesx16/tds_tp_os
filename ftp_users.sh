@@ -30,6 +30,6 @@ echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.userlist >/dev/null
 
 echo
 
-# echo "Agregando usuarios a ftp chroot list para delimitarlos estrictamente a su home"
-# echo "Comando: echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.chroot_list > /dev/null"
-# echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.chroot_list >/dev/null
+echo "Agregando 2° usuarios a ftp chroot_list lo que quita la limitacion de home"
+echo "Comando: echo -e "$USUARIO_2" | sudo tee /etc/vsftpd.chroot_list > /dev/null"
+echo -e "$USUARIO_2" | sudo tee /etc/vsftpd.chroot_list >/dev/null
