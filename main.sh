@@ -44,3 +44,6 @@ clear
 echo
 echo "Gracias por su atencion, ahora a testear!"
 echo
+#
+echo "IP: $(hostname -I)"
+echo

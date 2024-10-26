@@ -10,6 +10,7 @@ echo
 
 read -p "Ingresa el nombre del primer usuario: " USUARIO_1
 read -s -p "Ingrese la contraseña: " CONTRASENA_1
+echo
 echo "Creando usuario $USUARIO_1"
 sudo useradd -d /srv/ftp/$USUARIO_1 -m -U -s /bin/bash -k /etc/skel $USUARIO_1
 echo "Estableciendo la contraseña para el usuario $USUARIO_1"
@@ -20,6 +21,7 @@ echo
 
 read -p "Ingresa el nombre del segundo usuario: " USUARIO_2
 read -s -p "Ingrese la contraseña: " CONTRASENA_2
+echo
 echo "Creando usuario $USUARIO_2"
 sudo useradd -d /srv/ftp/$USUARIO_2 -m -U -s /bin/bash -k /etc/skel $USUARIO_2
 echo "Estableciendo la contraseña para el usuario $USUARIO_2"
@@ -29,7 +31,7 @@ echo "Usuario $USUARIO_2 creado con exito"
 echo
 
 echo "Agregando usuarios a ftp users list"
-echo -E "Comando: echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.userlist > /dev/null"
+echo -E 'Comando: echo -E "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.userlist > /dev/null'
 #
 #
 echo -e "$USUARIO_1\n$USUARIO_2" | sudo tee /etc/vsftpd.userlist >/dev/null
