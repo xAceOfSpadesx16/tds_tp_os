@@ -1,15 +1,15 @@
 echo "Usuarios habilitados en Samba"
 echo "Comando: sudo pdbedit -L"
 echo
-#
+#   pdbedit 
 sudo pdbedit -L
 
 echo
 
 echo "Usuarios habilitados en FTP"
 echo "Comando: sudo cat /etc/vsftpd.userlist"
-#
-sudo sudo cat /etc/vsftpd.userlist
+# 
+sudo  cat /etc/vsftpd.userlist
 
 echo
 
