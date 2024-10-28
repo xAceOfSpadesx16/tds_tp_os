@@ -20,7 +20,7 @@ echo "Comando: sudo cat /etc/vsftpd.chroot_list"
 
 # chroot : cambia directorios de raiz 
 # chroot_list : especifica que usuarios estan limitados a su directorio de inicio 
-sudo sudo cat /etc/vsftpd.chroot_list
+sudo cat /etc/vsftpd.chroot_list
 
 echo
 
