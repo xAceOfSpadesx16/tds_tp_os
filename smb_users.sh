@@ -10,7 +10,7 @@ echo "----------------------------------"
 echo "Creando usuarios para el grupo 'familia'"
 # useradd opciones: -M no crea directorio home, -U crea un grupo con el mismo nombre del usuario, -s define shell de usuario
 echo "Comando de creacion de usuario: sudo useradd -M -U -s /bin/bash <username>"
-#
+# sudo username chpasswd : se usa para poder actualizar o cambiar alguna contraseña
 echo "Comando de establecer contraseña: sudo echo <username>:<password> | sudo chpasswd"
 echo "Comando para agregar usuario a la base de datos de samba:"
 echo "(echo <password>; echo <password>) | sudo smbpasswd -a <username>"
@@ -73,7 +73,8 @@ echo
 clear
 
 echo "Agregando usuarios al grupo 'GRP-FAMILIA'"
-#
+# usermod : coamndo que modifica atributos de los usuarios 
+# - aG : agrega a usuarios a grupos sin  eliminarlo de ootros grupos donde ya pertenece el usuario
 echo "Comando: sudo usermod -aG GRP-FAMILIA <usuario>"
 sudo usermod -aG GRP-FAMILIA $USUARIO_1
 sudo usermod -aG GRP-FAMILIA $USUARIO_2
@@ -93,13 +94,14 @@ echo
 
 echo "Creando directorio familia en la particion sdb1"
 echo "Comando: sudo mkdir /srv/smb/familia"
-#
+# mkdir : crea directorios 
+# -p = crea los directorios padres para el directorio principal
 sudo mkdir -p /srv/smb/familia
 
 echo && sleep 1
 
 echo "definindo permisos para el directorio 'familia'"
-#
+# chmod : define quien puede leer , escribi o ejecutar un archivo 
 echo "Comando: sudo chmod 2770 /srv/smb/familia"
 sudo chmod 2770 /srv/smb/familia
 
@@ -107,7 +109,7 @@ echo && sleep 1
 
 echo "Definiendo propietario y grupo del directorio 'familia'"
 echo "Comando: sudo chown root:GRP-FAMILIA /srv/smb/familia"
-#
+# chown : cambia el propetario  de archivos o directorios 
 sudo chown root:GRP-FAMILIA /srv/smb/familia
 
 echo

@@ -1,7 +1,12 @@
 echo
 echo "Bienvenidos al trabajo de Sistemas Operativos y Redes de Datos"
 echo
-#
+# read y opciones :
+# read : se utiliza para leer una linea y  dividirla en palabras 
+# -n : especifica eñ numero de caracteres a leer antes de devolver el script
+# -s : oculta la entrada del usuario , para obtener contraseña u otra informacion sensible 
+# -r :evita que (\) se interprete como un caracter de escape
+# -p : permite especificar un mensaje de salicitud para mostrar al usuario antes de leer la entrada 
 read -n 1 -s -r -p "Comenzar la presentación..."
 clear
 
@@ -44,6 +49,6 @@ clear
 echo
 echo "Gracias por su atencion, ahora a testear!"
 echo
-#
+# hostname : muestra o establece el nombre del host del sistema 
 echo "IP: $(hostname -I)"
 echo
