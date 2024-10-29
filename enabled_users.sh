@@ -24,9 +24,10 @@ sudo cat /etc/vsftpd.chroot_list
 echo
 
 echo "Tree de puntos de montaje"
-echo "Comando: sudo tree /srv"
-# tree: proporciona una vista de todos los directorios y archivos en estructura de arbol. 
-sudo tree /srv
+echo "Comando: sudo tree -n /srv"
+# tree: proporciona una vista de todos los directorios y archivos en estructura de arbol.
+# -n: desactiva la coloracion de la salida.
+sudo tree -n /srv
 
 echo
 
