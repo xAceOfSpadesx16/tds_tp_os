@@ -4,8 +4,7 @@ echo "Modificando el archivo /etc/vsftpd.conf"
 echo "Comando: sudo tee -a /etc/vsftpd.conf << EOF ... EOF"
 sleep 1
 echo "Variables añadidas:"
-# tee y opciones : tee lee la entrada estandar y escribe en la salida estandar 
-# -a : añade la salida al final de archivo.txt en lugar de sobrescribirlo 
+# <<EOF ... EOF: redirige un bloque de texto como entrada de comando tee.
 sudo tee -a /etc/vsftpd.conf <<EOF
 anonymous_enable=NO
 write_enable=YES
@@ -25,13 +24,11 @@ EOF
 echo && sleep 1
 
 echo "Reiniciando el servicio vsftpd"
-# systemctl restart : reinicia serviocios de sistermas basados en systemd
 sudo systemctl restart vsftpd
 
 echo && sleep 2
 
 echo "Comprobando el estado del servicio vsftpd"
-# systemctl status : comprueba si esta corriendo el servidor 
 sudo systemctl status vsftpd --no-pager
 
 echo

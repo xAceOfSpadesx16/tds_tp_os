@@ -1,16 +1,16 @@
 echo "Usuarios habilitados en Samba"
 echo "Comando: sudo pdbedit -L"
 echo
-#   pdbedit y opciones : 
-# pdbedit : edita la base de datos de usuarios en un servidor Samba  
-# -L : se usa para visualizar info detallada sobre los usuarios 
+# pdbedit: manipula la base de datos de usuarios en un servidor Samba.  
+# -L : lista usuarios habilitados en el servidor.
 sudo pdbedit -L
 
 echo
 
 echo "Usuarios habilitados en FTP"
 echo "Comando: sudo cat /etc/vsftpd.userlist"
-# userlist : especifica una list de usuarios que tiene acceso restringido 
+# cat: concatena o muestra el contenido de un archivo.
+# vsftpd.userlist : especifica una lista de usuarios permitidos en el servidor FTP (whitelist).
 sudo  cat /etc/vsftpd.userlist
 
 echo
@@ -18,22 +18,21 @@ echo
 echo "Usuarios sin restricciones en FTP"
 echo "Comando: sudo cat /etc/vsftpd.chroot_list"
 
-# chroot : cambia directorios de raiz 
-# chroot_list : especifica que usuarios estan limitados a su directorio de inicio 
+# vsftpd.chroot_list: Especifica que usuarios no estan limitados a su directorio Home. 
 sudo cat /etc/vsftpd.chroot_list
 
 echo
 
 echo "Tree de puntos de montaje"
 echo "Comando: sudo tree /srv"
-# tree : se proporciona una vista de todos los directorios y archivos en estructura de arbol 
+# tree: proporciona una vista de todos los directorios y archivos en estructura de arbol. 
 sudo tree /srv
 
 echo
 
 echo "Confirmando puntos de montaje"
 echo "Comando: df /srv/*"
-# df : muestra informacion sobre el uso sdel espacio del  disco en los sistemas de archivos 
+# df: muestra informacion sobre el uso del espacio en disco disponible en los sistemas de archivos montados. 
 df /srv/*
 
 echo

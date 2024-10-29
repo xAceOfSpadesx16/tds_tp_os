@@ -4,10 +4,13 @@ echo "modificando el archivo /etc/samba/smb.conf" && sleep 1
 
 echo
 echo "Definiendo la sección [global] -> map to guest = never"
-# grep : es como un buscador dentro de los archivos o directorios   
-# el if esta para ver si grep escuentra el global en la configuracion de samba 
-# si esta busca (map to guest) para modificarlo y si no esta lo crea 
-# en el else esta por si no esta el global , lo crea y agrega el comando map to guest
+# grep : permite buscar patrones dentro de los archivos o directorios
+# instruccion if: busca la sección [global] en el archivo smb.conf. 
+# si se cumple la instruccion, entonces busca la seccion (map to guest) para modificarlo (si no esta lo crea).
+# instruccion else: en caso de que no se cumpla la instruccion if, crea la seccion [global] y agrega map to guest.
+# sed: permite editar y transformar texto de forma no interactiva.
+# -i: permite editar el archivo original.
+
 if grep -q "^\[global\]" /etc/samba/smb.conf; then
     sudo sed -i '/^\[global\]/,/^\[.*\]/ s/^ *map to guest *=.*/map to guest = never/' /etc/samba/smb.conf
 else
@@ -17,7 +20,6 @@ fi
 echo && sleep 1
 
 echo "Definiendo recurso compartido 'Familia'"
-# tee : muentra la salida en la terminal y guarda la misma salida en un archivo,txt
 echo "Comandos: echo '<line>' | sudo tee -a /etc/samba/smb.conf"
 
 echo "[Familia]" | sudo tee -a /etc/samba/smb.conf
@@ -33,14 +35,15 @@ echo && sleep 1
 
 echo "Reiniciando el servicio Samba"
 echo "Comando: sudo systemctl restart smbd"
-# en este comando reinicia el servidor de samba 
+# restart smbd: reinicia el servicio de samba
 sudo systemctl restart smbd
 
 echo && sleep 2
 
 echo "Comprobando el estado del servicio Samba"
 echo "Comando: sudo systemctl status smbd --no-pager"
-# aqui compueva que el servidor SAMBA este corriendo correctamente 
+# status smbd: comprueba que el servidor SAMBA este siendo ejecutado correctamente.
+# --no-pager: desactiva el uso de paginación en la salida de systemctl.
 systemctl status smbd --no-pager
 
 echo
