@@ -56,8 +56,13 @@ echo
 clear
 
 echo "Creando directorios para montar las particiones"
+
 sudo mkdir -p /srv/smb
+echo "Directorio smb creado en /srv/smb"
+
 sudo mkdir -p /srv/ftp
+echo "Directorio ftp creado en /srv/ftp"
+echo
 
 echo "Modificando archivo /etc/fstab"
 # echo ... | : se utiliza para redirigir la salida de echo como entrada de tee.
@@ -77,7 +82,7 @@ echo "/dev/sdb2  /srv/ftp  ext4  defaults  0  2" | sudo tee -a /etc/fstab >/dev/
 
 echo && sleep 1
 
-echo "Reiniciando daemon de montaje"
+echo "Reiniciando daemon de sistema"
 echo "Comando: sudo systemctl daemon-reload"
 # systemctl : herramienta para gestionar los servicios y demonios.
 # deamon-reload : recarga la configuración de los servicios y demonios administrados por systemd.
